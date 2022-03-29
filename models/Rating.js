@@ -10,7 +10,7 @@ Rating.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    comment: {
+    rating_text: {
       type: DataTypes.STRING,
     },
     star_rating: {

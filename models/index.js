@@ -4,6 +4,7 @@ const Duties = require('./Duties');
 const User = require('./User');
 const Appointments = require('./Appointments');
 const Rating = require('./Rating');
+const Message = require('./Message');
 
 
 //TODO: figure our relation of tables
