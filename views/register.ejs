@@ -1,0 +1,23 @@
+<h1>Register</h1>
+
+<!-- post route to register -->
+<form action='/register' method='POST'>
+    <div>
+        <label for='name'>Name</label>
+        <!-- name = name will connect name to server -->
+        <input type='text' id='name' name='name' required>
+    </div>
+    <div>
+        <label for='email'>Email</label>
+        <!-- name = email will connect name to server -->
+        <input type='email' id='email' name='email' required>
+    </div>
+    <div>
+        <label for='name'>Password</label>
+        <!-- name = name will connect name to server -->
+        <input type='password' id='password' name='password' required>
+    </div>
+    <button type='submit'>Register</button>
+</form> 
+<!-- use anchor to connect back to login page -->
+<a href='/login'>Login</a>
