@@ -4,7 +4,7 @@ const app = express();
 const bcrypt = require("bcrypt");
 
 // used to store user information in a local variable
-// temporalily used unless connected to database
+// temporality used unless connected to database
 const users = [];
 
 //used to connect to ejs dependencies
