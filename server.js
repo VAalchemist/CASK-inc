@@ -3,6 +3,32 @@ const sequelize = require("./config/connection");
 const app = express();
 const port = process.env.PORT || 3000;
 
+
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+
+//used to get the controllers
+app.use(require('./controllers'));
+
+
+//sync and force to drop tables on creation
+sequelize.sync({
+  force: false
+})
+.then(() => {
+  app.listen(port, () => {
+    console.log("Listening on http://localhost:" + port);
+  });
+});
+
+
+
+
+
+
+//Arlos code below
+
+
 // bcrypt used to hash private information to make sure app information is secure
 // const bcrypt = require("bcrypt");
 
@@ -12,8 +38,6 @@ const port = process.env.PORT || 3000;
 
 //used to connect to ejs dependencies
 // app.set("view-engine", "ejs");
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
 
 //used to create intro homepage for login
 // app.get("/", (req, res) => {
@@ -53,13 +77,3 @@ app.use(express.json());
 //   console.log(users)
 // });
 
-
-
-sequelize.sync({
-  force: false
-})
-.then(() => {
-  app.listen(port, () => {
-    console.log("Listening on port " + port);
-  });
-});
