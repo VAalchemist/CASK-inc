@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Users extends Model {}
+class User extends Model {}
 
-Users.init(
+User.init(
     {
         user_id: {
             type: DataTypes.INTEGER,
@@ -27,9 +27,6 @@ Users.init(
         },
         zipcode: {
             type: DataTypes.INTEGER
-        },
-        employer_type: {
-            type: DataTypes.BOOLEAN
         }
     },
     {
@@ -38,8 +35,8 @@ Users.init(
       // Prevent sequelize from renaming the table
       freezeTableName: true,
       underscored: true,
-      modelName: 'users'
+      modelName: 'user'
     }
   );
 
-  module.exports = Users;
+  module.exports = User;

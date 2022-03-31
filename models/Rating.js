@@ -5,13 +5,36 @@ class Rating extends Model {}
 
 Rating.init(
   {
-    user_id: {
+    rating_id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
     },
+    client_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'users',
+        key: 'user_id'
+      }
+    },
+    handyman_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'users',
+        key: 'user_id'
+      }
+    },
+    appointment_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'appointments',
+        key: 'appointment_id'
+      }
+
+    },
     rating_text: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING,      
+
     },
     star_rating: {
       type: DataTypes.INTEGER,

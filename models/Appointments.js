@@ -5,14 +5,25 @@ class Appointments extends Model { }
 
 Appointments.init(
     {
-        user_id: {
+      appointment_id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
+      },
+        
+        client_id: {
             type: DataTypes.INTEGER,
-            primaryKey: true,
-            autoIncrement: true
+            references: {
+              model: 'users',
+              key: 'user_id'
+            }            
         },
         handyman_id: {
           type: DataTypes.INTEGER,
-          foreignKey: true,
+          references: {
+            model: 'users',
+            key: 'user_id'
+          }
         },
         date: {
             type: DataTypes.STRING

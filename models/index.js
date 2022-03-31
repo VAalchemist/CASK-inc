@@ -1,10 +1,23 @@
 // import all models
 
-const Duties = require('./Duties');
+// const Duties = require('./Duties');
 const User = require('./User');
-const Appointments = require('./Appointments');
-const Rating = require('./Rating');
-const Message = require('./Message');
+const Client = require('./Client');
+// const Appointments = require('./Appointments');
+// const Rating = require('./Rating');
+// const Message = require('./Message');
+
+Client.belongsTo(User,{
+    foreignKey: 'user_id'
+});
+
+// User.hasMany(Appointments, {
+//     foreignKey: ''
+
+// });
+
+
+
 
 
 //TODO: figure our relation of tables
@@ -71,4 +84,4 @@ const Message = require('./Message');
 //   foreignKey: 'post_id'
 // });
 
-module.exports = { User, Duties, Appointments, Rating };
+module.exports = { User, Client};
