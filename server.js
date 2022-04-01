@@ -1,8 +1,24 @@
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config();
+}
+
 const express = require("express");
 const app = express();
 // bcrypt used to hash private information to make sure app information is secure
 const bcrypt = require("bcrypt");
+// flash wil be used to display messages upon error to the user
+const flash = require("express-flash");
+const session = require("express-session");
+const methodOverride = require('method-override')
 
+const initializePassport = require("./passport-config");
+const passport = require("passport");
+// used to make user information matches the email given 
+initializePassport(
+  passport,
+  (email) => users.find((user) => user.email === email),
+  (id) => users.find((user) => user.id === id)
+);
 // used to store user information in a local variable
 // temporalily used unless connected to database
 const users = [];
@@ -10,27 +26,44 @@ const users = [];
 //used to connect to ejs dependencies
 app.set("view-engine", "ejs");
 app.use(express.urlencoded({ extended: false }));
+app.use(flash());
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+  })
+);
 
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(methodOverride('_method'))
 //used to create intro homepage for login
-app.get("/", (req, res) => {
-  res.render("index.ejs");
+app.get("/", checkAuthenticated, (req, res) => {
+    // provide user name upon load up
+  res.render("index.ejs", { name: req.user.name });
 });
 
 // used to connect to login.ejs
-app.get("/login", (req, res) => {
+app.get("/login", checkNotAuthenticated, (req, res) => {
   res.render("login.ejs");
 });
 
 // used to connect to action of post in login.ejs
-app.post("/login", (req, res) => {});
+app.post("/login", checkNotAuthenticated, passport.authenticate("local", {
+    successRedirect: "/",
+    failureRedirect: "/login",
+    failureFlash: true,
+  })
+);
 
 // used to connect to register.ejs
-app.get("/register", (req, res) => {
+app.get("/register", checkNotAuthenticated, (req, res) => {
   res.render("register.ejs");
 });
 
 // used to connect to action of post in register.ejs
-app.post("/register", async (req, res) => {
+app.post("/register", checkNotAuthenticated, async (req, res) => {
   try {
     const hashedPassword = await bcrypt.hash(req.body.password, 10);
     users.push({
@@ -46,7 +79,31 @@ app.post("/register", async (req, res) => {
     // if unsuccessful return back to register
     res.redirect("/register");
   }
-  console.log(users)
+  console.log(users);
 });
+
+app.delete('/logout', (req, res) => {
+    // passport provides to clear session and logout user
+    req.logout()
+    res.redirect('/login')
+})
+
+// check if user is authenticated
+function checkAuthenticated(req, res, next) {
+    if(req.isAuthenticated()) {
+        return next()
+    }
+    // if no user information, user is sent back to login
+    res.redirect('/login')
+}
+
+function checkNotAuthenticated(req, res, next) {
+    if (req.isAuthenticated()) {
+        // if user is authenticated redirect to homepage
+        return res.redirect('/')
+    }
+    // if not authenitcated 
+    next()
+}
 
 app.listen(3000);
