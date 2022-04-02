@@ -3,7 +3,36 @@ if (process.env.NODE_ENV !== "production") {
 }
 
 const express = require("express");
+const sequelize = require("./config/connection");
 const app = express();
+const port = process.env.PORT || 3000;
+
+
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+
+//used to get the controllers
+app.use(require('./controllers'));
+
+
+//sync and force to drop tables on creation
+sequelize.sync({
+  force: false
+})
+.then(() => {
+  app.listen(port, () => {
+    console.log("Listening on http://localhost:" + port);
+  });
+});
+
+
+
+
+
+
+//Arlos code below
+
+
 // bcrypt used to hash private information to make sure app information is secure
 const bcrypt = require("bcrypt");
 // flash wil be used to display messages upon error to the user
@@ -21,7 +50,7 @@ initializePassport(
 );
 // used to store user information in a local variable
 // temporality used unless connected to database
-const users = [];
+// const users = [];
 
 //used to connect to ejs dependencies
 app.set("view-engine", "ejs");
