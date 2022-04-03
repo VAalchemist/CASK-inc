@@ -2,11 +2,12 @@ const router = require('express').Router();
 const { User, Client } = require('../../models/');
 
 
-//route to create user (/api/users)
+//post route to create user (/api/user)
 router.post('/', (req, res) => {
-    //expect obj {address1,address2,city,state,zipcode}
+    //expect obj {profile_pic, name, address1, address2, city, state, zipcode, is_client, email, password}
     console.log("trying to create");
     User.create({
+        //get data from bodyy and assigning to to attributes
         profile_pic: req.body.profile_pic,
         name: req.body.name,
         address1: req.body.address1,
@@ -20,6 +21,7 @@ router.post('/', (req, res) => {
             if (!dbUserData.is_client) {
                 return res.json(dbUserData);
             }
+            //create client based off of user
             Client.create({
                 email: req.body.email,
                 password: req.body.password,
@@ -32,7 +34,7 @@ router.post('/', (req, res) => {
             res.status(500).json(err);
         });
 });
-
+//get route api/user to get handymans
 router.get('/', (req, res) => {
     console.log("trying to get");
     User.findAll({
@@ -47,7 +49,7 @@ router.get('/', (req, res) => {
         });
 });
 
-
+//get route api/user/clients to get clients
 router.get('/clients', (req, res) => {
     console.log("trying to get client");
     User.findAll({
@@ -61,10 +63,9 @@ router.get('/clients', (req, res) => {
             res.status(500).json(err);
         });
 });
-
+//post route api/user/login to find if client exists
 router.post('/login', (req, res) => {
     // expects {email: 'lernantino@gmail.com', password: 'password1234'}
-    // console.log(req.body.email);
     Client.findOne({
       where: {
         email: req.body.email
