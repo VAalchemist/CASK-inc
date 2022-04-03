@@ -1,1 +1,3 @@
+DROP DATABASE IF EXISTS dutycall_db;
+
 CREATE DATABASE dutycall_db;
