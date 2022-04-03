@@ -1,7 +1,11 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class User extends Model {}
+
+class User extends Model {
+
+}
+
 
 User.init(
     {
@@ -9,6 +13,9 @@ User.init(
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
+        },
+        name: {
+            type: DataTypes.STRING
         },
         profile_pic: {
             type: DataTypes.STRING
@@ -27,16 +34,19 @@ User.init(
         },
         zipcode: {
             type: DataTypes.INTEGER
+        },
+        is_client: {
+            type: DataTypes.BOOLEAN
         }
     },
-    {
-      sequelize,
-      timestamps: false,
-      // Prevent sequelize from renaming the table
-      freezeTableName: true,
-      underscored: true,
-      modelName: 'user'
+    {  
+        sequelize,
+        timestamps: false,
+        // Prevent sequelize from renaming the table
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'user'
     }
-  );
+);
 
-  module.exports = User;
+module.exports = User;
