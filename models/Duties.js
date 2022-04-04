@@ -8,7 +8,6 @@ Duties.init(
         user_id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
-            autoIncrement: true
         },
         electrician: {
             type: DataTypes.BOOLEAN

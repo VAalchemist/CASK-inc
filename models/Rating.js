@@ -13,14 +13,14 @@ Rating.init(
     client_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'users',
+        model: 'user',
         key: 'user_id'
       }
     },
     handyman_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'users',
+        model: 'user',
         key: 'user_id'
       }
     },
