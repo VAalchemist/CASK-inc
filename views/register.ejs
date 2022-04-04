@@ -1,7 +1,7 @@
 <h1>Register</h1>
 
 <!-- post route to register -->
-<form action='/register' method='POST'>
+<form class="register-form">
     <div>
         <label for='name'>Name</label>
         <!-- name = name will connect name to server -->
@@ -17,7 +17,34 @@
         <!-- name = name will connect name to server -->
         <input type='password' id='password' name='password' required>
     </div>
+    <div>
+        <label for='address1'>Address 1</label>
+        <!-- name = name will connect name to server -->
+        <input type='text' id='address1' name='address1' required>
+    </div>
+    <div>
+        <label for='address1'>Address 2</label>
+        <!-- name = name will connect name to server -->
+        <input type='text' id='address2' name='address2'>
+    </div>
+    <div>
+        <label for='city'>City</label>
+        <!-- name = name will connect name to server -->
+        <input type='text' id='city' name='city' required>
+    </div>
+    <div>
+        <label for='state'>State</label>
+        <!-- name = name will connect name to server -->
+        <input type='text' id='state' name='state' required>
+    </div>
+    <div>
+        <label for='zipcode'>zipcode</label>
+        <!-- name = name will connect name to server -->
+        <input type='text' id='zipcode' name='zipcode' required>
+    </div>
     <button type='submit'>Register</button>
 </form> 
 <!-- use anchor to connect back to login page -->
 <a href='/login'>Login</a>
+
+<script src="public/javascript/register.js"></script>

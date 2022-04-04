@@ -1,9 +1,6 @@
 <h1>Login</h1>
-<% if (messages.error) { %>
-    <%= messages.error %>
-<% } %>
-<!-- post route to login -->
-<form action='/login' method='POST'>
+
+<form class="login-form">
     <div>
         <label for='email'>Email</label>
         <!-- name = email will connect name to server -->
@@ -18,3 +15,5 @@
 </form> 
 <!-- use anchor to connect back to login page -->
 <a href='/register'>Register</a>
+
+<script src="public/javascript/login.js"></script>
