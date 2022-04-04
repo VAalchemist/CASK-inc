@@ -15,7 +15,7 @@ router.post('/', (req, res) => {
         city: req.body.city,
         state: req.body.state,
         zipcode: req.body.zipcode,
-        is_client: req.body.is_client,
+        is_client: req.body.is_client
     })
         .then(dbUserData => {
             if (!dbUserData.is_client) {
