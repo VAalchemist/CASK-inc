@@ -1,11 +1,12 @@
 const router = require('express').Router();
 const { User, Client } = require('../../models/');
+const bcrypt = require('bcrypt');
 
 
 //post route to create user (/api/user)
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
     //expect obj {profile_pic, name, address1, address2, city, state, zipcode, is_client, email, password}
-    console.log("trying to create");
+    const hashPW = await bcrypt.hash(req.body.password, 10);
     User.create({
         //get data from bodyy and assigning to to attributes
         profile_pic: req.body.profile_pic,
@@ -21,12 +22,19 @@ router.post('/', (req, res) => {
             if (!dbUserData.is_client) {
                 return res.json(dbUserData);
             }
+            
             //create client based off of user
             Client.create({
                 email: req.body.email,
-                password: req.body.password,
-                user_id: dbUserData.user_id
-            }).then(dbClientData => { res.json(dbClientData) });
+                password: hashPW,
+                user_id: dbUserData.user_id,
+                name: dbUserData.name,
+            }).then(dbClientData => { 
+              req.session.user_id = dbUserData.user_id;
+              req.session.name = dbUserData.name;
+              req.session.email = dbUserData.email;
+              req.session.loggedIn = true;
+              res.json(dbClientData) });
 
         })
         .catch(err => {
@@ -36,7 +44,6 @@ router.post('/', (req, res) => {
 });
 //get route api/user to get handymans
 router.get('/', (req, res) => {
-    console.log("trying to get");
     User.findAll({
         where: {
             is_client: false
@@ -51,7 +58,6 @@ router.get('/', (req, res) => {
 
 //get route api/user/clients to get clients
 router.get('/clients', (req, res) => {
-    console.log("trying to get client");
     User.findAll({
         where: {
             is_client: true
@@ -64,8 +70,8 @@ router.get('/clients', (req, res) => {
         });
 });
 //post route api/user/login to find if client exists
-router.post('/login', (req, res) => {
-    // expects {email: 'lernantino@gmail.com', password: 'password1234'}
+router.post('/login', async (req, res) => {
+    // expects {email: 'lernantino@gmail.com', password: 'password1234'
     Client.findOne({
       where: {
         email: req.body.email
@@ -74,17 +80,34 @@ router.post('/login', (req, res) => {
       if (!dbUserData) {
         res.status(400).json({ message: 'No user with that email address!' });
         return;
+      }  
+
+      if (!bcrypt.compareSync(req.body.password, dbUserData.password)) {
+        console.log("wrong password");
+        res.status(400).json();
       }
-  
-    //   const validPassword = dbUserData.checkPassword(req.body.password);
-      console.log(dbUserData.password , " " , req.body.password)
-      if (!req.body.password === dbUserData.password) {
-        res.status(400).json({ message: 'Incorrect password!' });
-        return;
-      }
-      console.log("logged in!!");
-      res.json();
+      else {
+
+          req.session.user_id = dbUserData.user_id;
+          req.session.name = dbUserData.name;
+          req.session.email = dbUserData.email;
+          req.session.loggedIn = true;
+        res.json(dbUserData);
+      }      
+      
     });
+
+  });
+
+  router.post('/logout', (req, res) => {
+    if (req.session.loggedIn) {
+      req.session.destroy(() => {
+        res.status(204).end();
+      });
+    }
+    else {
+      res.status(404).end();
+    }
   });
 
 module.exports = router;

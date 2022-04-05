@@ -19,11 +19,12 @@ formEl.addEventListener('submit', async function () {
             headers: { 'Content-Type': 'application/json' }
         });
         //if there's a response redirect to index
+        console.log(response);
         if (response.ok) {
             document.location.replace('/index');
             console.log("user exists");
         } else {
-            alert(response.statusText);
+            console.log("user doesnt exists");
         }
     }
 

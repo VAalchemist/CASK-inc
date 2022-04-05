@@ -19,7 +19,7 @@ User.hasMany(Appointments,{
     foreignKey: 'handyman_id'
 });
 
-User.belongsTo(Duties,{
+Duties.belongsTo(User,{
     foreignKey: 'user_id'
 });
 

@@ -12,7 +12,10 @@ router.get("/register", (req, res) => {
 });
 
 router.get("/index", (req, res) => {
-  res.render("index.ejs");
+  if(!req.session.loggedIn){
+    res.render("login.ejs")
+  }
+  else  res.render("index.ejs", {name: req.session.name});
 });
 
 
