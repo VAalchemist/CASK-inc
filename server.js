@@ -17,7 +17,7 @@ app.use(require('./controllers'));
 
 //sync and force to drop tables on creation
 sequelize.sync({
-  force: false
+  force: true
 })
 .then(() => {
   app.listen(port, () => {

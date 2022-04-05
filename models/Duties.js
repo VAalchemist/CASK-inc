@@ -5,9 +5,9 @@ class Duties extends Model {}
 
 Duties.init(
     {
-        user_id: {
+        handyman_id: {
             type: DataTypes.INTEGER,
-            primaryKey: true,
+            primaryKey: true
         },
         electrician: {
             type: DataTypes.BOOLEAN
@@ -33,6 +33,13 @@ Duties.init(
         contractor: {
             type: DataTypes.BOOLEAN
         },
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+              model: 'user',
+              key: 'user_id'
+            }
+        } 
     },
     {
       sequelize,

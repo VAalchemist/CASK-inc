@@ -6,7 +6,6 @@ router.post('/', (req, res) => {
     console.log("trying to create");
     Duties.create({
         //get data from bodyy and assigning to to attributes
-        user_id: req.body.user_id,
         electrician: req.body.electrician,
         gardener: req.body.gardener,
         plumber: req.body.plumber,
@@ -15,6 +14,7 @@ router.post('/', (req, res) => {
         pool_maintenance: req.body.pool_maintenance,
         roofer: req.body.roofer,
         contractor: req.body.contractor,
+        user_id: req.body.user_id,
     })
         .then(dbAppointmentsData => {
             res.json(dbAppointmentsData);

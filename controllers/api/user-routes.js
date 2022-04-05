@@ -25,7 +25,7 @@ router.post('/', (req, res) => {
             Client.create({
                 email: req.body.email,
                 password: req.body.password,
-                user_id: dbUserData.user_id
+                // user_id: dbUserData.user_id
             }).then(dbClientData => { res.json(dbClientData) });
 
         })

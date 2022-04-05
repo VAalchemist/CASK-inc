@@ -32,6 +32,12 @@ formEl.addEventListener('submit', async function () {
             //type of content being passed
             headers: { 'Content-Type': 'application/json' }
         });
+
+        if (response.ok) {
+            document.location.replace('/index/');
+          } else {
+            alert(response.statusText);
+          }
     }
 
 
