@@ -6,6 +6,14 @@ const express = require("express");
 const sequelize = require("./config/connection");
 const app = express();
 const port = process.env.PORT || 3000;
+const bcrypt = require("bcrypt");
+// flash wil be used to display messages upon error to the user
+const flash = require("express-flash");
+const session = require("express-session");
+const methodOverride = require('method-override')
+
+const initializePassport = require("./passport-config");
+const passport = require("passport");
 
 app.use(express.urlencoded({ extended: false }));
 app.use('/public',express.static('public'));
@@ -49,40 +57,33 @@ sequelize.sync({
 //Arlos code below
 
 
-// // bcrypt used to hash private information to make sure app information is secure
-// const bcrypt = require("bcrypt");
-// // flash wil be used to display messages upon error to the user
-// const flash = require("express-flash");
-// const session = require("express-session");
-// const methodOverride = require('method-override')
+// bcrypt used to hash private information to make sure app information is secure
 
-// const initializePassport = require("./passport-config");
-// const passport = require("passport");
-// // used to make user information matches the email given 
-// initializePassport(
-//   passport,
-//   (email) => users.find((user) => user.email === email),
-//   (id) => users.find((user) => user.id === id)
-// );
-// // used to store user information in a local variable
-// // temporality used unless connected to database
-// // const users = [];
+// used to make user information matches the email given 
+initializePassport(
+  passport,
+  (email) => users.find((user) => user.email === email),
+  (id) => users.find((user) => user.id === id)
+);
+// used to store user information in a local variable
+// temporality used unless connected to database
+// const users = [];
 
-// //used to connect to ejs dependencies
-// app.set("view-engine", "ejs");
-// app.use(express.urlencoded({ extended: false }));
-// app.use(flash());
-// app.use(
-//   session({
-//     secret: process.env.SESSION_SECRET,
-//     resave: false,
-//     saveUninitialized: false,
-//   })
-// );
+//used to connect to ejs dependencies
+app.set("view-engine", "ejs");
+app.use(express.urlencoded({ extended: false }));
+app.use(flash());
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+  })
+);
 
-// app.use(passport.initialize());
-// app.use(passport.session());
-// app.use(methodOverride('_method'))
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(methodOverride('_method'))
 // //used to create intro homepage for login
 // app.get("/", checkAuthenticated, (req, res) => {
 //     // provide user name upon load up
@@ -133,22 +134,22 @@ sequelize.sync({
 //     res.redirect('/login')
 // })
 
-// // check if user is authenticated
-// function checkAuthenticated(req, res, next) {
-//     if(req.isAuthenticated()) {
-//         return next()
-//     }
-//     // if no user information, user is sent back to login
-//     res.redirect('/login')
-// }
+// check if user is authenticated
+function checkAuthenticated(req, res, next) {
+    if(req.isAuthenticated()) {
+        return next()
+    }
+    // if no user information, user is sent back to login
+    res.redirect('/login')
+}
 
-// function checkNotAuthenticated(req, res, next) {
-//     if (req.isAuthenticated()) {
-//         // if user is authenticated redirect to homepage
-//         return res.redirect('/')
-//     }
-//     // if not authenitcated 
-//     next()
-// }
+function checkNotAuthenticated(req, res, next) {
+    if (req.isAuthenticated()) {
+        // if user is authenticated redirect to homepage
+        return res.redirect('/')
+    }
+    // if not authenitcated 
+    next()
+}
 
 
