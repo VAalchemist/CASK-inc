@@ -1,15 +1,15 @@
 .box{
-    float:left;
+    
     margin-right:20px;
-}
-.clear{
-    clear:both;
 }
 
 .img {
-    float: left;
+    
     width:  550px;
-    height: 350px;
-    object-fit: cover;
-}
+    height: 400px;
+    display: block;
+    margin-left: auto;
+    margin-right: 400px;
+    width: 50%;
 
+}
