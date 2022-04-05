@@ -8,9 +8,9 @@
       href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./stylesheets/style.css">
+    <link rel="stylesheet" href="../public/stylesheets/style.css">
     <title>Duty Call</title>
-    <img src="stylesheets/images/IMG_0746.PNG" width="150" />
+    <img src="../public/stylesheets/images/IMG_0746.PNG" width="150" />
   </head>
   <div class="md:border-4 border-green-500"></div>
 
@@ -21,7 +21,7 @@
 </div>
     <div class="box">
       <iframe
-        src="./employees.html"
+        src="../public/employees.html"
         frameborder="0"
         scrolling="no"
         width="10%"
@@ -31,7 +31,7 @@
     </div>
     <div>
       <iframe
-        src="./employee-info.html"
+        src="../public/employee-info.html"
         name="right"
         frameborder="0"
         scrolling="no"
@@ -44,9 +44,13 @@
   </body>
 <footer>
 <div class="text-center">
-  <form action="/logout?_method=DELETE" method="POST">
+  <form class="logout-form">
     <button type="submit">Log Out</button>
 </div>
 </form>
 </footer>
+
+<script src="public/javascript/index.js"></script>
 </html>
+
+

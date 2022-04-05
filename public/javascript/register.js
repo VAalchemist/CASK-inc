@@ -34,7 +34,7 @@ formEl.addEventListener('submit', async function () {
         });
 
         if (response.ok) {
-            document.location.replace('/index/');
+            document.location.replace('/index');
           } else {
             alert(response.statusText);
           }

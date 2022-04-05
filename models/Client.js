@@ -10,6 +10,9 @@ Client.init(
             primaryKey: true,
             autoIncrement: true
         },
+        name: {
+            type: DataTypes.STRING
+        },
         email: {
             type: DataTypes.STRING
         },
