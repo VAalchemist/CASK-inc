@@ -5,10 +5,6 @@ class Duties extends Model {}
 
 Duties.init(
     {
-        handyman_id: {
-            type: DataTypes.INTEGER,
-            primaryKey: true
-        },
         electrician: {
             type: DataTypes.BOOLEAN
         },

@@ -1,7 +1,15 @@
 if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();
 }
+// bcrypt used to hash private information to make sure app information is secure
+const bcrypt = require("bcrypt");
+// flash wil be used to display messages upon error to the user
+const flash = require("express-flash");
+const session = require("express-session");
+const methodOverride = require('method-override')
 
+const initializePassport = require("./passport-config");
+const passport = require("passport");
 const express = require("express");
 const sequelize = require("./config/connection");
 const app = express();
@@ -22,10 +30,10 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(methodOverride('_method'))
 //used to create intro homepage for login
-app.get("/", checkAuthenticated, (req, res) => {
-    // provide user name upon load up
-  res.render("index.ejs", { name: req.user.name });
-});
+// app.get("/", checkAuthenticated, (req, res) => {
+//     // provide user name upon load up
+//   res.render("index.ejs", { name: req.user.name });
+// });
 
 //used to get the controllers
 app.use(require('./controllers'));
@@ -49,15 +57,7 @@ sequelize.sync({
 //Arlos code below
 
 
-// // bcrypt used to hash private information to make sure app information is secure
-// const bcrypt = require("bcrypt");
-// // flash wil be used to display messages upon error to the user
-// const flash = require("express-flash");
-// const session = require("express-session");
-// const methodOverride = require('method-override')
 
-// const initializePassport = require("./passport-config");
-// const passport = require("passport");
 // // used to make user information matches the email given 
 // initializePassport(
 //   passport,
