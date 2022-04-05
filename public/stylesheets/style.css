@@ -1,0 +1,15 @@
+.box{
+    
+    margin-right:20px;
+}
+
+.img {
+    
+    width:  550px;
+    height: 400px;
+    display: block;
+    margin-left: auto;
+    margin-right: 400px;
+    width: 50%;
+
+}
