@@ -10,6 +10,22 @@ const port = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: false }));
 app.use('/public',express.static('public'));
 app.use(express.json());
+app.use(flash());
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+  })
+);
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(methodOverride('_method'))
+//used to create intro homepage for login
+app.get("/", checkAuthenticated, (req, res) => {
+    // provide user name upon load up
+  res.render("index.ejs", { name: req.user.name });
+});
 
 //used to get the controllers
 app.use(require('./controllers'));
