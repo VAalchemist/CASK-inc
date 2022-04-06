@@ -3,9 +3,9 @@ const router = require('express').Router();
 
 const { User, Client } = require('../models');
 
-// router.get("/", (req, res) => {
-//   res.redirect("/index");
-// });
+router.get("/", (req, res) => {
+  res.redirect("/index");
+});
 
 router.get("/login", (req, res) => {
   res.render("login.ejs");
