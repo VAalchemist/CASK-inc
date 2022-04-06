@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
+    <title>Duty Call | Login</title>   
+</head>
+
+
+
+<!-- style="background-image: url(public\stylesheets\images\leaves.jpg)" -->
+
+
+
+<body class="bg-gray-900 h-screen flex justify-center items-center text-gray-400">
+<div class="w-52 h-72 border-4 border-green-200 bg-gray-700 flex flex-col items-center shadow-lg rounded-lg overflow-hidden py-12 px-8 ">
+
+
+    <img src="public\stylesheets\images\dutyCALL.PNG" class="w-40" />
+
+    <div class="flex flex-col justify-center items-center">
+        <h1 class="m-2 text-2xl font-bold text-yellow-600 ">Sign into Duty Call</h1>
+        
+        <form id="login-form" class=" flex flex-col">
+        
+            <div class="p-6 flex">
+                <label class="px-2 ml-2"  for='email'>Email</label>
+                <!-- name = email will connect name to server -->
+                <input class="rounded pl-4" type='email' id='email' name='email' required>
+            </div>
+        
+            <div>
+                <label class="px-2" for='name'>Password</label>
+                <!-- name = name will connect name to server -->
+                <input class="rounded pl-4" type='password' id='password' name='password' required>
+            </div>
+
+            <div class="flex justify-center">
+                <div class= "text-center mt-4 ml-8">
+                    <button class="px-2 hover:text-green-600" type='submit'>Login</button>
+                    
+                    <!-- use anchor to connect back to login page -->
+                    <a class=" px-2 hover:text-green-600" href='/register'>Register</a>
+                </div>
+            </div>
+        
+        </form>
+    </div>
+
+
+</div>
+<script src="/public/javascript/login.js"></script>
+</body>
+</html>
