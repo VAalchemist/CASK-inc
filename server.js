@@ -1,6 +1,6 @@
-// if (process.env.NODE_ENV !== "production") {
-//   require("dotenv").config();
-// }
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config();
+}
 
 const session = require("express-session");
 // const methodOverride = require('method-override')
@@ -12,7 +12,7 @@ const express = require("express");
 const sequelize = require("./config/connection");
 const app = express();
 const path = require('path');
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 3000;
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
