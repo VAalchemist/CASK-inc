@@ -22,29 +22,29 @@
     <img src="public\stylesheets\images\dutyCALL.PNG" class="w-40" />
 
     <div class="flex flex-col justify-center items-center">
-        <h1 class="m-2">Login</h1>
+        <h1 class="m-2">Sign into Duty Call</h1>
         
         <form class="login-form flex flex-col">
         
             <div class="p-6 flex">
-                <label  for='email'>Email</label>
+                <label class="px-2 ml-2"  for='email'>Email</label>
                 <!-- name = email will connect name to server -->
-                <input type='email' id='email' name='email' required>
+                <input class="rounded pl-4" type='email' id='email' name='email' required>
             </div>
         
             <div>
-                <label for='name'>Password</label>
+                <label class="px-2" for='name'>Password</label>
                 <!-- name = name will connect name to server -->
-                <input type='password' id='password' name='password' required>
+                <input class="rounded pl-4" type='password' id='password' name='password' required>
             </div>
         
         </form>
         
-        <div>
-            <button type='submit'>Login</button>
+        <div class="">
+            <button class="mx-4 my-4 hover:text-green-600" type='submit'>Login</button>
         
             <!-- use anchor to connect back to login page -->
-            <a href='/register'>Register</a>
+            <a class="hover:text-green-600" href='/register'>Register</a>
         
         </div>
     </div>
