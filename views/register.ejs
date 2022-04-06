@@ -1,50 +1,88 @@
-<h1>Register</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- <link rel=“icon” type="image/x-icon" href="../public/stylesheets/images/dutyCALL.PNG" > -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
+    <title>Duty Call | Register</title>   
+</head>
+
+<body class="bg-gray-900 h-screen flex justify-center items-center text-gray-400">
+    <div
+        class="w-52 h-72 border-4 border-green-200 bg-gray-700 flex flex-col items-center shadow-lg rounded-lg overflow-hidden py-4 px-8 ">
+
+<img src="public\stylesheets\images\dutyCALL.PNG" class="w-40" />
+
+<h1 class="m-2 text-2xl font-bold text-yellow-600 ">Register</h1>
 
 <!-- post route to register -->
-<form class="register-form">
-    <div>
-        <label for='name'>Name</label>
+<form id="register-form" class="flex flex-col justify-center items-center px-16">
+    <div class="flex flex-col">
+        <label class="px-2 ml-2"  for='name'>Name</label>
         <!-- name = name will connect name to server -->
-        <input type='text' id='name' name='name' required>
+        <input class="rounded pl-4"  class="rounded pl-4"  type='text' id='name' name='name' required>
     </div>
-    <div>
-        <label for='email'>Email</label>
+
+    <div class="flex flex-col">
+        <label class="px-2 ml-2"  for='email'>Email</label>
         <!-- name = email will connect name to server -->
-        <input type='email' id='email' name='email' required>
+        <input class="rounded pl-4"  type='email' id='email' name='email' required>
     </div>
-    <div>
-        <label for='name'>Password</label>
+
+    <div class="flex flex-col">
+        <label class="px-2 ml-2"  for='name'>Password</label>
         <!-- name = name will connect name to server -->
-        <input type='password' id='password' name='password' required>
+        <input class="rounded pl-4"  type='password' id='password' name='password' required>
     </div>
-    <div>
-        <label for='address1'>Address 1</label>
+
+    <div class="flex flex-col">
+        <label class="px-2 ml-2"  for='address1'>Address 1</label>
         <!-- name = name will connect name to server -->
-        <input type='text' id='address1' name='address1' required>
+        <input class="rounded pl-4"  type='text' id='address1' name='address1' required>
     </div>
-    <div>
-        <label for='address1'>Address 2</label>
+
+    <div class="flex flex-col">
+        <label class="px-2 ml-2"  for='address1'>Address 2</label>
         <!-- name = name will connect name to server -->
-        <input type='text' id='address2' name='address2'>
+        <input class="rounded pl-4"  type='text' id='address2' name='address2'>
     </div>
-    <div>
-        <label for='city'>City</label>
+
+    <div class="flex flex-col">
+        <label class="px-2 ml-2"  for='city'>City</label>
         <!-- name = name will connect name to server -->
-        <input type='text' id='city' name='city' required>
+        <input class="rounded pl-4"  type='text' id='city' name='city' required>
     </div>
-    <div>
-        <label for='state'>State</label>
+
+    <div class="flex flex-col">
+        <label class="px-2 ml-2"  for='state'>State</label>
         <!-- name = name will connect name to server -->
-        <input type='text' id='state' name='state' required>
+        <input class="rounded pl-4"  type='text' id='state' name='state' required>
     </div>
-    <div>
-        <label for='zipcode'>zipcode</label>
+
+    <div class="flex flex-col mb-4">
+        <label class="px-2 ml-2"  for='zipcode'>zipcode</label>
         <!-- name = name will connect name to server -->
-        <input type='text' id='zipcode' name='zipcode' required>
+        <input class="rounded pl-4"  type='text' id='zipcode' name='zipcode' required>
+    </div> 
+
+        <!-- PHOTO UPLOAD SECTION -->
+    <section>PHOTO UPLOAD SECTION HERE</section>
+    
+    <div class="flex flex-row mt-4">
+        <button class="px-2 hover:text-green-600" type='submit'>Signup</button>
+        <!-- use anchor to connect back to login page -->
+        <a class="px-4 hover:text-green-600" href='/login'>Login</a>
     </div>
-    <button type='submit'>Register</button>
-</form> 
-<!-- use anchor to connect back to login page -->
-<a href='/login'>Login</a>
+</form>
+
+
 
 <script src="public/javascript/register.js"></script>
+</div>
+</body>
+</html>
+
+

@@ -1,4 +1,4 @@
-const formEl = document.querySelector('.register-form');
+const formEl = document.querySelector('#register-form');
 //event listener for register
 formEl.addEventListener('submit', async function () {
     event.preventDefault();

@@ -1,4 +1,4 @@
-const formEl = document.querySelector('.login-form');
+const formEl = document.querySelector('#login-form');
 
 //event listener for login
 formEl.addEventListener('submit', async function () {
