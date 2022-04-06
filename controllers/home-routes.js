@@ -23,6 +23,11 @@ router.get("/index", (req, res) => {
 });
 
 
-
+router.get('/upload', (req, res) => {
+  if(!req.session.loggedIn){
+    res.render("login.ejs")
+  }
+  else res.render('upload');
+});
 
 module.exports = router;

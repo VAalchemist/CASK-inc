@@ -1,6 +1,18 @@
 const router = require('express').Router();
 const { User, Client } = require('../../models/');
 const bcrypt = require('bcrypt');
+const cloudinary = require('cloudinary');
+const multer = require('multer');
+const path = require('path');
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, 'Images')
+  },
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + path.extname(file.originalname))
+  }
+})
+const upload = multer({storage: storage})
 
 
 //post route to create user (/api/user)
@@ -56,6 +68,24 @@ router.get('/', (req, res) => {
         });
 });
 
+router.get('/client', (req,res) => {
+  User.findOne({
+    attributes: { exclude: ['address1','address2','city','state','zipcode'] },
+    where: {
+      user_id: req.session.user_id
+    }
+
+  }).then(dbUserData => {
+    console.log(dbUserData);
+    if(!dbUserData){
+      res.status(404).json({ message: 'No user found with this id' });
+      return;
+    }
+    res.json(dbUserData);
+  })
+
+});
+
 //get route api/user/clients to get clients
 router.get('/clients', (req, res) => {
     User.findAll({
@@ -108,6 +138,24 @@ router.post('/login', async (req, res) => {
     else {
       res.status(404).end();
     }
+  });
+
+
+  router.post('/upload', upload.single('image'), (req, res) => {
+    console.log(req.file.path);
+    cloudinary.uploader.upload(req.file.path, (response,err) => {
+      console.log("error" , err);
+      
+      if(!err){
+        console.log("response");
+        User.update(
+          {profile_pic: response.url},
+          {where: {user_id: 1}});
+      }
+      else console.log("error");
+
+    })
+    res.redirect("/index");
   });
 
 module.exports = router;
