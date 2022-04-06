@@ -8,6 +8,9 @@
       href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
       rel="stylesheet"
     />
+    <!-- flatpickr -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
     <link rel="stylesheet" href="../style.css" />
     <title>Electrician</title>
   </head>
@@ -25,10 +28,25 @@
       </div>
     
       <div>
-        <button type="submit">book appointment</button>
-      </div>
-    
-    
+          <a href="/index">
+          <button type="submit">book appointment</button></a>
+        </div>
+<form>
+  
+  <input class='form-data' type="datetime-local" placeholder="Select DateTime">
+</form>
+
     </div>
+    <!-- flatpickr -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+      config = {
+        enableTime: true,
+        dateFormat: "Y-m-d H:i",
+        altInput: true,
+        altFormat: "F j, Y (h:S K)"
+      }
+      flatpickr("input[type=datetime-local]", config);
+    </script>
   </body>
 </html>
