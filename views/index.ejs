@@ -1,46 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../public/stylesheets/style.css">
-    <title>Duty Call</title>
-    <!-- <img src="../public/stylesheets/images/IMG_0746.PNG" width="150" /> -->
-  </head>
 
-  <body>
+<head>
+
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../public/stylesheets/style.css">
+  <title>Duty Call</title>
+  <!-- <img src="../public/stylesheets/images/IMG_0746.PNG" width="150" /> -->
+</head>
+
+<body>
 
 
-<!-- PHOTO DISPLAY SECTION HERE  -->
+  <!-- PHOTO DISPLAY SECTION HERE  -->
   <section class="profile-pic border-4 border-purple-400 p-4">PHOTO DISPLAY HERE</section>
   <a href="/upload">update image</a>
 
-    <div class='text-center'>
-        <h1>How can we assist you <%= name %>?</h1>  
-    </div>
+  <div class='text-center'>
+    <h1>How can we assist you <%= name %>?</h1>
+  </div>
 
+  <div class="flex flex-col">
 
     <div class="ml-36">
 
-        <!-- scrolling="no"
+      <!-- scrolling="no"
         width="10%"
         height="512"
         align="left" -->
-      <iframe class=" border-4 border-pink-400 w-72 h-3/5"
-        src="../public/employees.html"
-        frameborder="0"
-     
-      ></iframe>
+      <iframe class=" border-4 border-pink-400 w-72 h-3/5" src="../public/employees.html" frameborder="0"></iframe>
     </div>
 
     <div class=" h-screen ml-20 border-4 border-green-700 rounded-lg">
-      <!-- <iframe
+      <iframe
         src="../public/profile-info.html"
         name="right"
         frameborder="0"
@@ -48,22 +43,23 @@
         width="90%"
         height="850"
         align="center"
-      ></iframe> -->
+      ></iframe>
     </div>
     <div class="clear"></div>
-  </body>
+
+  </div>
+</body>
 
 
 
 <footer>
-<div class="text-center">
-  <form class="logout-form">
-    <button type="submit">Log Out</button>
-</div>
-</form>
+  <div class="text-center">
+    <form class="logout-form">
+      <button type="submit">Log Out</button>
+  </div>
+  </form>
 </footer>
 
 <script src="public/javascript/index.js"></script>
+
 </html>
-
-

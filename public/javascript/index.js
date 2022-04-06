@@ -1,17 +1,8 @@
 const formEl = document.querySelector('.logout-form');
 const imgEl = document.querySelector('.profile-pic');
 
-window.onload = function () {
-  getUserData();
-}
 
-
-
-
-async function getUserData() {
-
-  imgEl.value = "";
-  const response = await fetch('/api/user/client', {
+  const response = fetch('/api/user/client', {
     method: 'get'
   })
     .then(response => response.json())
@@ -32,8 +23,6 @@ async function getUserData() {
       }
 
     });
-
-}
 
 
 formEl.addEventListener('submit', async function () {

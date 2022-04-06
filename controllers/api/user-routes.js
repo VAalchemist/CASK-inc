@@ -141,21 +141,21 @@ router.post('/login', async (req, res) => {
   });
 
 
-  router.post('/upload', upload.single('image'), (req, res) => {
+  router.post('/upload', upload.single('image'),  async (req, res) => {
     console.log(req.file.path);
-    cloudinary.uploader.upload(req.file.path, (response,err) => {
+    await cloudinary.uploader.upload(req.file.path, (response,err) => {
       console.log("error" , err);
       
       if(!err){
         console.log("response");
-        User.update(
+         User.update(
           {profile_pic: response.url},
           {where: {user_id: 1}});
       }
       else console.log("error");
 
     })
-    res.redirect("/index");
+     res.redirect("/index");
   });
 
 module.exports = router;
