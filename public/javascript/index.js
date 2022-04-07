@@ -10,7 +10,8 @@ const imgEl = document.querySelector('.profile-pic');
       if (data.profile_pic) {
         const img = document.createElement('img');
         img.setAttribute('src', data.profile_pic);
-        img.setAttribute('style', "width: 100px;");
+        img.setAttribute('class', "shadow-lg rounded-full max-w-full h-auto align-middle border-none");
+        img.setAttribute('style', "width: 100px; height: 100px");
         imgEl.append(img);
       }
 
