@@ -150,7 +150,7 @@ router.post('/login', async (req, res) => {
         console.log("response");
          User.update(
           {profile_pic: response.url},
-          {where: {user_id: 1}});
+          {where: {user_id: req.session.user_id}});
       }
       else console.log("error");
 
