@@ -17,34 +17,22 @@
   <div>
 
     <div class="bg-yellow-900">
-      <img class="img" src="../images/carpenter.jpg" />
+      <img class = "handy-man" id="1"class="img" src="../images/carpenter.jpg" />
     </div>
 
     <div>
       <a href="#">Ratings</a>
     </div>
 
-    <div>
-      <a href="./booked.html">
-        <button type="submit">book appointment</button></a>
-    </div>
-    <form>
 
-      <div class="flatpickr">
-        <input type="text" placeholder="Select Date.." data-input> <!-- input is mandatory -->
-
-        <a class="input-button" title="toggle" data-toggle>
-          <i class="icon-calendar"></i>
-        </a>
-
-        <a class="input-button" title="clear" data-clear>
-          <i class="icon-close"></i>
-        </a>
-      </div>
+    <form class="date-form">
+  
+      <input class='date-input form-data' type="datetime-local" placeholder="Select DateTime">
+      <button type="submit">book appointment</button></a>
     </form>
-
-  </div>
-  <script src="public/javascript/index.js"></script>
+    
+        </div>
+        <script src="../../javascript/appointment.js"></script>
   <!-- flatpickr -->
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <script>

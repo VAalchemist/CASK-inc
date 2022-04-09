@@ -54,7 +54,7 @@ const userdata = [
   },
   {
     profile_pic: '',
-    name: 'Rodd the Roofer',
+    name: 'todd the Roofer',
     address1: '123 ST',
     address2: '',
     city: 'Bobopilis',
