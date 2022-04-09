@@ -1,3 +1,8 @@
 node_modules
 .DS_Store
-Images
+# exclude everything
+Images/*
+
+# exception to the rule
+!Images/.gitkeep 
+.env
