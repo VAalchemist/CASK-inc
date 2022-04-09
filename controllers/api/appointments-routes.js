@@ -23,6 +23,7 @@ router.post('/', (req, res) => {
 router.get('/', (req, res) => {
     console.log("trying to get");
     Appointments.findAll({
+        where: {client_id: req.session.user_id}
     })
         .then(dbAppointmentsData => res.json(dbAppointmentsData))
         .catch(err => {

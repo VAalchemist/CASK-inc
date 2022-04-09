@@ -7,7 +7,7 @@ const messageRoutes = require('./message-routes');
 const ratingRoutes = require('./rating-routes');
 
 router.use('/user', usersRoutes);
-router.use('/appointments', appointmentsRoutes);
+router.use('/appointment', appointmentsRoutes);
 router.use('/duties', dutiesRoutes);
 // router.use('/message', messageRoutes);
 router.use('/rating', ratingRoutes);
