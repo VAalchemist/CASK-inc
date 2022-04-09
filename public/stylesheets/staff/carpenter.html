@@ -1,50 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
-    <!-- flatpickr -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 
-    <link rel="stylesheet" href="../style.css" />
-    <title>Carpenter</title>
-  </head>
-  <body>
-    <div>
-      
-      <div class="bg-yellow-900">
-        <img class="img" src="../images/carpenter.jpg" />
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
+  <!-- flatpickr -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 
-      <div>
-        <a href="#" >Ratings</a>
-      </div>
+  <link rel="stylesheet" href="../style.css" />
+  <title>Carpenter</title>
+</head>
 
-      <div>
-        <a href="./booked.html">
-        <button type="submit">book appointment</button></a>
-      </div>
-<form>
-  
-  <input class='form-data' type="datetime-local" placeholder="Select DateTime">
-</form>
+<body>
+  <div>
 
+    <div class="bg-yellow-900">
+      <img class="img" src="../images/carpenter.jpg" />
     </div>
-    <!-- flatpickr -->
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <script>
-      config = {
-        enableTime: true,
-        dateFormat: "Y-m-d H:i",
-        altInput: true,
-        altFormat: "F j, Y (h:S K)"
-      }
-      flatpickr("input[type=datetime-local]", config);
-    </script>
-  </body>
+
+    <div>
+      <a href="#">Ratings</a>
+    </div>
+
+    <div>
+      <a href="./booked.html">
+        <button type="submit">book appointment</button></a>
+    </div>
+    <form>
+
+      <div class="flatpickr">
+        <input type="text" placeholder="Select Date.." data-input> <!-- input is mandatory -->
+
+        <a class="input-button" title="toggle" data-toggle>
+          <i class="icon-calendar"></i>
+        </a>
+
+        <a class="input-button" title="clear" data-clear>
+          <i class="icon-close"></i>
+        </a>
+      </div>
+    </form>
+
+  </div>
+  <script src="public/javascript/index.js"></script>
+  <!-- flatpickr -->
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script>
+    config = {
+      enableTime: true,
+      dateFormat: "Y-m-d H:i",
+      altInput: true,
+      altFormat: "F j, Y (h:S K)"
+    }
+    flatpickr("input[type=datetime-local]", config);
+  </script>
+</body>
+
 </html>

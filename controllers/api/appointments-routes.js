@@ -6,7 +6,7 @@ router.post('/', (req, res) => {
     console.log("trying to create");
     Appointments.create({
         //get data from bodyy and assigning to to attributes
-        client_id: req.body.client_id,
+        client_id: req.session.user_id,
         handyman_id: req.body.handyman_id,
         date: req.body.date
     })
