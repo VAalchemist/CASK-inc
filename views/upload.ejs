@@ -4,14 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
+
+    <title>Duty UP</title>
 </head>
-<body>
-    <h1> Upload Images</h1>
-    <form class="img-form" method="POST" action="/api/user/upload" enctype="multipart/form-data">
+
+<body class="bg-gray-900  flex flex-col justify-center items-center m-12 ">
+
+    <h1 class="font-bold text-3xl text-yellow-600">Upload Image</h1>
+    <form class="img-form text-gray-200"  method="POST" action="/api/user/upload" enctype="multipart/form-data">
         <input id="img" type="file" name="image">
-        <input type="submit">
+        <input class="bg-gray-700 mt-4 border border-gray-600 rounded-lg py-2 px-4 w-full md:mx-2 placeholder-yellow-200 hover:text-green-300 text-sm mt-4 rounded-lg py-2 px-4 w-full md:mx-2" type="submit">
     </form>
+
 </body>
 
 </html>
