@@ -54,7 +54,27 @@ const userdata = [
   },
   {
     profile_pic: '',
-    name: 'todd the Roofer',
+    name: 'Todd the Roofer',
+    address1: '123 ST',
+    address2: '',
+    city: 'Bobopilis',
+    state: 'CA',
+    zipcode: '90250',
+    is_client: false
+  },
+  {
+    profile_pic: '',
+    name: 'Scott the Plumber',
+    address1: '123 ST',
+    address2: '',
+    city: 'Bobopilis',
+    state: 'CA',
+    zipcode: '90250',
+    is_client: false
+  },
+  {
+    profile_pic: '',
+    name: 'Sam the Pool Cleaner',
     address1: '123 ST',
     address2: '',
     city: 'Bobopilis',
