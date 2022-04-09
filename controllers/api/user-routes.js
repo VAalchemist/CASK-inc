@@ -119,6 +119,7 @@ router.post('/login', async (req, res) => {
       else {
 
           req.session.user_id = dbUserData.user_id;
+          req.session.client_id = dbUserData.client_id;
           req.session.name = dbUserData.name;
           req.session.email = dbUserData.email;
           req.session.loggedIn = true;

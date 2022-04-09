@@ -19,6 +19,18 @@ User.hasMany(Appointments,{
     foreignKey: 'handyman_id'
 });
 
+Appointments.belongsTo(User,{
+    foreignKey: 'handyman_id'
+});
+
+Client.hasMany(Appointments,{
+    foreignKey: 'client_id'
+});
+
+Appointments.belongsTo(Client,{
+    foreignKey: 'client_id'
+});
+
 Duties.belongsTo(User,{
     foreignKey: 'user_id'
 });
