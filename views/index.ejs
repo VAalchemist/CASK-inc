@@ -1,19 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../public/stylesheets/style.css">
+  <title>Duty Call | Home</title>
+</head>
 
+<body class="">
+  
+  <div>
+      <%- include('./partials/nav.ejs') %>
+        <div class="text-center">
+          <form class="logout-form">
+            <button type="submit">Log Out</button>
+          </form>
+        </div>
+  </div>
+  
+    
   <!-- PHOTO DISPLAY SECTION HERE  -->
-  <section class="profile-pic border-4 border-gray-600 rounded-lg p-8"></section>
-  <a class="border-2 bg-gray-800 text-white p-2 rounded-lg text-sm hover:bg-green-600" href="/upload">Update Image</a>
-  <a class="border-2 bg-gray-800 text-white p-2 rounded-lg text-sm hover:bg-green-600" href="/appointment">View Appointments</a>
+  <section class=" border-4 border-gray-600 rounded-lg p-8">
 
-  <div class="text-center">
-    <form class="logout-form">
-      <button type="submit">Log Out</button>
-    </form>
-  </div>
+    <div class="flex flex-col">    
+      <div class='text-center'>
+        <h1>How can we assist you <%= name %>?</h1>
+      </div>
+    
 
-  <div class='text-center'>
-    <h1>How can we assist you <%= name %>?</h1>
-  </div>
+      <div class="flex flex-col ">
+
+      <div class="profile-pic pb-4 ml-4"></div>
+      <a class="w-1/5 text-center border-2 bg-gray-800 text-white p-2 rounded-lg text-sm hover:bg-green-600" href="/upload">Update Image</a>
+      <a class="w-1/5 text-center border-2 bg-gray-800 text-white p-2 rounded-lg text-sm hover:bg-green-600" href="/appointment">View
+        Appointments</a>
+      </div>
+      
+    </div>
+   
+  </section>
+ 
+
+
+
+
 
   <div class="flex flex-col">
     <div class="border-4 border-gray-600 rounded-lg">
@@ -56,3 +89,5 @@
   </div>
   
   <script src="public/javascript/index.js"></script>
+</body>
+</html>

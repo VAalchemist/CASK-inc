@@ -9,13 +9,26 @@
     <title>Duty UP</title>
 </head>
 
-<body class="bg-gray-900  flex flex-col justify-center items-center m-12 ">
+<body class="w-full h-full">
+
+    <div>
+        <%- include('./partials/nav.ejs') %>
+            <div class="text-center">
+                <form class="logout-form">
+                    <button type="submit">Log Out</button>
+                </form>
+            </div>
+    </div>
+
+    <div class="flex flex-col items-center p-4 mt-40">
 
     <h1 class="font-bold text-3xl text-yellow-600">Upload Image</h1>
-    <form class="img-form text-gray-200"  method="POST" action="/api/user/upload" enctype="multipart/form-data">
-        <input id="img" type="file" name="image">
-        <input class="bg-gray-700 mt-4 border border-gray-600 rounded-lg py-2 px-4 w-full md:mx-2 placeholder-yellow-200 hover:text-green-300 text-sm mt-4 rounded-lg py-2 px-4 w-full md:mx-2" type="submit">
+    <form class="img-form text-gray-500 p-16"  method="POST" action="/api/user/upload" enctype="multipart/form-data">
+        <input id="img" type="file" name="image" class="text-black">
+        <input class="bg-gray-700  hover:text-green-300 rounded-lg px-4 py-1 " type="submit">
     </form>
+
+    </div>
 
 </body>
 
