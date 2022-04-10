@@ -16,6 +16,10 @@ router.get("/register", (req, res) => {
   res.render("register");
 });
 
+router.get("/carpenter", (req, res) => {
+
+});
+
 router.get("/index", (req, res) => {
   if(!req.session.loggedIn){
     res.render("login.ejs")
@@ -37,5 +41,7 @@ router.get('/appointment', (req, res) => {
   }
   else res.render('appointment');
 });
+
+
 
 module.exports = router;
