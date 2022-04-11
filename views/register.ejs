@@ -1,91 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <!-- <link rel=“icon” type="image/x-icon" href="../public/stylesheets/images/dutyCALL.PNG" > -->
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
-    <title>Duty Call | Register</title>
-</head>
+<section class="flex justify-center items-center ">
+    <div class="h-screen w-full flex flex-col justify-center items-center rounded-lg bg-no-repeat bg-center mt-16" style="background-image: url(../public/images/border4.png)">
 
-<body class="bg-gray-900  flex flex-col justify-center items-center m-12">
-
-    <h1 class="font-bold text-3xl text-yellow-600">Register</h1>
-    <img src="/public/stylesheets/images/dutyCALL.PNG" class="w-32" />
-
-    <div
-        class=" bg-gray-800 py-12 px-12 flex flex-col items-center border-b-2 border-l-2 border-gray-700 rounded-lg shadow-lg">
+        <div class="flex flex-col items-center ">
+            <img src="../public/images/dutyCALL.PNG" class="w-40" />
+            <h1 class="font-bold text-3xl text-yellow-600">Register</h1>
+        </div>
 
         <!-- post route to register -->
-        <form id="register-form" class="max-w-xl w-full text-gray-200 mt-4 px-8 md:px-0">
+        <form id="register-form" class="max-w-sm w-full text-gray-200 mt-4 mb-40 px-8 md:px-6">
+            <div class="flex flex-col md:flex-row ">
+            <label class="sr-only" for='name'>Name</label>
+            <input class="bg-yellow-100 mt-6 border border-gray-600 rounded-lg py-1 px-4 w-full md:mx-2 placeholder-gray-800" placeholder="Name" type='text' id='name' name='name' required>
 
-            <div class="flex flex-col md:flex-row md:-mx-2">
-                <label class="sr-only" for='name'>Name</label>
-                <!-- name = name will connect name to server -->
-                <input
-                    class="bg-gray-700 mt-4 border border-gray-600 rounded-lg py-2 px-4 w-full md:mx-2 placeholder-yellow-200"
-                    placeholder="Name" type='text' id='name' name='name' required>
-
-                <label class="sr-only" for='email'>Email</label>
-                <!-- name = email will connect name to server -->
-                <input
-                    class="bg-gray-700 mt-4 border border-gray-600 rounded-lg py-2 px-4 w-full md:mx-2 placeholder-yellow-200"
-                    placeholder="exampemail@email.com" type='email' id='email' name='email' required>
+            <label class="sr-only" for='email'>Email</label>
+            <input class="bg-yellow-100 mt-6 border border-gray-600 rounded-lg py-1 px-4 w-full md:mx-2 placeholder-gray-800" placeholder="exampemail@email.com" type='email' id='email' name='email' required>
             </div>
 
-            <div class="flex flex-col md:flex-row md:-mx-2">
-                <label class="sr-only" for='name'>Password</label>
-                <!-- name = name will connect name to server -->
-                <input
-                    class="bg-gray-700 mt-4 border border-gray-600 rounded-lg py-2 px-4 w-full md:mx-2 placeholder-yellow-200"
-                    placeholder="Password" type='password' id='password' name='password' required>
+            <div class="flex flex-col md:flex-row ">
+            <label class="sr-only" for='name'>Password</label>
+            <input class="bg-yellow-100 mt-6 border border-gray-600 rounded-lg py-1 px-4 w-full md:mx-2 placeholder-gray-800" placeholder="Password" type='password' id='password' name='password' required>
 
-                <label class="sr-only" for='address1'>Address 1</label>
-                <!-- name = name will connect name to server -->
-                <input
-                    class="bg-gray-700 mt-4 border border-gray-600 rounded-lg py-2 px-4 w-full md:mx-2 placeholder-yellow-200"
-                    placeholder="Address 1" type='text' id='address1' name='address1' required>
+            <label class="sr-only" for='address1'>Address 1</label>
+            <input class="bg-yellow-100 mt-6 border border-gray-600 rounded-lg py-1 px-4 w-full md:mx-2 placeholder-gray-800" placeholder="Address 1" type='text' id='address1' name='address1' required>
             </div>
 
-            <div class="flex flex-col md:flex-row md:-mx-2">
-                <label class="sr-only" for='address1'>Address 2</label>
-                <!-- name = name will connect name to server -->
-                <input
-                    class="bg-gray-700 mt-4 border border-gray-600 rounded-lg py-2 px-4 w-full md:mx-2 placeholder-yellow-200"
-                    placeholder="Address 2" type='text' id='address2' name='address2'>
+            <div class="flex flex-col md:flex-row ">
+            <label class="sr-only" for='address1'>Address 2</label>
+            <input class="bg-yellow-100 mt-6 border border-gray-600 rounded-lg py-1 px-4 w-full md:mx-2 placeholder-gray-800" placeholder="Address 2" type='text' id='address2' name='address2'>
 
-                <label class="sr-only" for='city'>City</label>
-                <!-- name = name will connect name to server -->
-                <input
-                    class="bg-gray-700 mt-4 border border-gray-600 rounded-lg py-2 px-4 w-full md:mx-2 placeholder-yellow-200"
-                    placeholder="City" type='text' id='city' name='city' required>
+            <label class="sr-only" for='city'>City</label>
+            <input class="bg-yellow-100 mt-6 border border-gray-600 rounded-lg py-1 px-4 w-full md:mx-2 placeholder-gray-800" placeholder="City" type='text' id='city' name='city' required>
             </div>
 
-            <div class="flex flex-col md:flex-row md:-mx-2">
-                <label class="sr-only" for='state'>State</label>
-                <!-- name = name will connect name to server -->
-                <input
-                    class="bg-gray-700 mt-4 border border-gray-600 rounded-lg py-2 px-4 w-full md:mx-2 placeholder-yellow-200"
-                    placeholder="State" type='text' id='state' name='state' required>
+            <div class="flex flex-col md:flex-row ">
+            <label class="sr-only" for='state'>State</label>
+            <input class="bg-yellow-100 mt-6 border border-gray-600 rounded-lg py-1 px-4 w-full md:mx-2 placeholder-gray-800" placeholder="State" type='text' id='state' name='state' required>
 
-                <label class="sr-only" for='zipcode'>Zip Code</label>
-                <!-- name = name will connect name to server -->
-                <input
-                    class="bg-gray-700 mt-4 border border-gray-600 rounded-lg py-2 px-4 w-full md:mx-2 placeholder-yellow-200"
-                    placeholder="Zip Code" type='text' id='zipcode' name='zipcode' required>
+            <label class="sr-only" for='zipcode'>Zip Code</label>
+            <input class="bg-yellow-100 mt-6 border border-gray-600 rounded-lg py-1 px-4 w-full md:mx-2 placeholder-gray-800" placeholder="Zip Code" type='text' id='zipcode' name='zipcode' required>
             </div>
 
 
-            <div class="flex items-center">
-                <button class="hover:text-green-300 text-sm mt-4 rounded-lg py-2 px-4 w-full md:mx-2"
-                    type='submit'>Signup</button>
+            <div class="flex ml-12 mt-4 md:flex-row">
+            <button class="text-yellow-600 font-bold hover:text-green-300 text-sm rounded-lg w-full " type='submit'>Signup</button>
                 <!-- use anchor to connect back to login page -->
-                <a class="hover:text-green-300 text-sm mt-4 rounded-lg py-2 px-4 w-full md:mx-2" href='/login'>Login</a>
+            <a class="text-yellow-600 font-bold hover:text-green-300 text-sm rounded-lg  w-full" href='/login'>Login</a>
             </div>
         </form>
-
     </div>
 
     <script src="public/javascript/register.js"></script>
