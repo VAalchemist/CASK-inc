@@ -16,9 +16,11 @@ router.get("/register", (req, res) => {
   res.render("register");
 });
 
-router.get("/carpenter", (req, res) => {
 
-});
+//NOT SURE IF THIS IS THE CORRECT WAY TO RENDER THIS PAGE OR NOT, PLEASE DELETE IF ITS NOT RIGHT
+// router.get("/carpenter", (req, res) => {
+//   res.render("carpenter.ejs")
+// });
 
 router.get("/index", (req, res) => {
   if(!req.session.loggedIn){

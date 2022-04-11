@@ -10,30 +10,20 @@
   <title>Duty Call</title>
 </head>
 
-<body class="bg-fixed bg-no-repeat bg-cover bg-center h-screen" style="background-image: url(../public/images/bg1.jpg)">
+<body class="h-screen bg-gradient-to-bl from-yellow-200 via-green-800 to-gray-900">
 
+<div class="bg-fixed bg-no-repeat bg-cover bg-center h-screen" style="background-image: url(../public/images/bg1.jpg)">
 
-<div>
-
-  <header>
-      <%- include('./partials/nav.ejs') %>
-  </header>
-  
-  <main >
-  
-    <%- body %>
-  
-    <%- include('employees.ejs') %>
+  <main >  
+    <%- body %>   
   </main>
+
 </div>
 
- 
-
-
-
-<div class="">
+<footer class="">
   <%- include('./partials/footer.ejs') %>
 </div>
+
 <script src="public/javascript/index.js"></script>
 </body>
 </html>
