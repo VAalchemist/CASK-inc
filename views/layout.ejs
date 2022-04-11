@@ -10,25 +10,30 @@
   <title>Duty Call</title>
 </head>
 
-<body class="bg-gradient-to-br from-yellow-200 via-green-800 to-gray-900 rounded-lg">
+<body class="bg-fixed bg-no-repeat bg-cover bg-center h-screen" style="background-image: url(../public/images/bg1.jpg)">
 
 
 <div>
-  <main class="bg-fixed bg-no-repeat bg-cover bg-center" style="background-image: url(../public/images/bg1.jpg)">
+
+  <header>
+      <%- include('./partials/nav.ejs') %>
+  </header>
+  
+  <main >
   
     <%- body %>
   
+    <%- include('employees.ejs') %>
   </main>
 </div>
 
  
 
 
-  <footer class=" text-blue-800 text-xs flex justify-between p-2">
-    <h2 class="">Made with 🦾</h2>
-    <p class="">&copy; 2022 CASK, Inc.</p>
-  </footer>
 
+<div class="">
+  <%- include('./partials/footer.ejs') %>
+</div>
 <script src="public/javascript/index.js"></script>
 </body>
 </html>

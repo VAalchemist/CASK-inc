@@ -43,9 +43,4 @@ router.get('/appointment', (req, res) => {
 });
 
 
-//404 must go at the bottom since the code is read from top to bottom
-app.use((req, res) => {
-  res.status(418).render('404', {title:'404'});
-});
-
 module.exports = router;
