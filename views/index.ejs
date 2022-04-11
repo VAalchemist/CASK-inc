@@ -9,17 +9,18 @@
   <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="../public/stylesheets/style.css">
   <title>Duty Call</title>
-  <!-- <img src="../public/stylesheets/images/IMG_0746.PNG" width="150" /> -->
+
+  <!-- <img src="../public/stylesheets/images/nav.jpg"/> -->
 </head>
 
 <body class="bg-gray-800 text-gray-400">
   
 
-
+  <!-- border-4 border-gray-600 rounded-lg  -->
   <!-- PHOTO DISPLAY SECTION HERE  -->
-  <section class="profile-pic border-4 border-gray-600 rounded-lg p-8"></section>
-  <a class="border-2 bg-gray-800 text-white p-2 rounded-lg text-sm hover:bg-green-600" href="/upload">Update Image</a>
-  <a class="border-2 bg-gray-800 text-white p-2 rounded-lg text-sm hover:bg-green-600" href="/appointment">View Appointments</a>
+  <section class="profile-pic p-8"></section>
+  <a class="m-2 border-2 bg-gray-600 text-white p-2 rounded-lg text-sm hover:bg-green-600" href="/upload">Update Image</a>
+  <a class="border-2 bg-gray-600 text-white p-2 rounded-lg text-sm hover:bg-green-600" href="/appointment">View Appointments</a>
 
   <div class="text-center">
     <form class="logout-form">
@@ -31,34 +32,28 @@
     <h1>How can we assist you <%= name %>?</h1>
   </div>
 
-  <div class="flex flex-col">
+  <!-- <div class="flex flex-col"> -->
 
-    <div class="border-4 border-gray-600 rounded-lg">
+    <!-- <div class="border-4 border-gray-600 rounded-lg"> -->
         <!-- HANDYMEN DISPLAY -->
  
-      <iframe class="box" src="../public/employees.html"   
-        width="30%"
-        height="350"
+      <iframe src="../public/employees.html"   
+        width="20%"
+        height="500"
         align="left"
-        scrolling="no" 
-        frameborder="0" ></iframe>
-    </div>
+        scrolling="no" ></iframe>
 
-    <div class=" border-4 border-gray-600 rounded-lg">
+    <!-- <div class=" border-4 border-gray-600 rounded-lg"> -->
 
      
-      <iframe class="box"
-        src="../public/profile-info.html"
+      <iframe src="../public/profile-info.html"
         name="right"
-        frameborder="0"
+        width="70%"
+        height="700"
         align="right"
-        scrolling="no"
-        width="90%"
-        height="850"
-        
-      ></iframe>
+        scrolling="no"></iframe>
     </div>
-    <div class="clear"></div>
+    </div>
 
   </div>
 </body>
