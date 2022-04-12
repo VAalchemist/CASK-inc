@@ -1,50 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
-    <!-- flatpickr -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 
-    <link rel="stylesheet" href="../style.css" />
-    <title>Carpenter</title>
-  </head>
-  <body>
-    <div>
-      
-      <div class="bg-yellow-900">
-        <img class="img" src="../images/carpenter.jpg" />
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
+  <!-- flatpickr -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/material_green.css">
 
-      <div>
-        <a href="#" >Ratings</a>
-      </div>
 
-      <div>
-        <a href="/index">
-        <button type="submit">book appointment</button></a>
-      </div>
-<form>
-  
-  <input class='form-data' type="datetime-local" placeholder="Select DateTime">
-</form>
+  <link rel="stylesheet" href="../style.css" />
+  <title>Carpenter</title>
+</head>
 
+<body>
+  <div>
+
+    <div class="">
+      <img class ="handy-man flex flex-col justify-center items-center m-10 md: w-3/4 border-b-2 border-l-2 border-gray-400 rounded-lg" id="1" src="../images/carpenter.jpg" />
     </div>
-    <!-- flatpickr -->
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <script>
-      config = {
-        enableTime: true,
-        dateFormat: "Y-m-d H:i",
-        altInput: true,
-        altFormat: "F j, Y (h:S K)"
-      }
-      flatpickr("input[type=datetime-local]", config);
-    </script>
-  </body>
+
+    <form class="date-form text-center 
+      ">
+
+        <input class='date-input form-data bg-gray-700 mt-4 border border-gray-600 rounded-lg py-2 px-4 md:mx-2 "' type="datetime-local" placeholder="Select Date & Time">
+
+        <button type="submit" class="img-form inline-block px-6 py-2.5 bg-orange-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-700 hover:shadow-lg focus:bg-green-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-800 active:shadow-lg transition duration-150 ease-in-out">Book Appointment</button></a>
+      </form>
+    
+        </div>
+        <script src="../../javascript/add-appointment.js"></script>
+  <!-- flatpickr -->
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script>
+    config = {
+      enableTime: true,
+      dateFormat: "Y-m-d H:i",
+      altInput: true,
+      altFormat: "F j, Y (h:S K)"
+    }
+    flatpickr("input[type=datetime-local]", config);
+  </script>
+</body>
+
 </html>

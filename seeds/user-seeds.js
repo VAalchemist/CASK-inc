@@ -3,54 +3,84 @@ const { User, Post } = require('../models');
 
 const userdata = [
   {
-    username: 'alesmonde0',
-    email: 'nwestnedge0@cbc.ca',
-    password: 'password123'
+    profile_pic: 'https://www.asbestos.com/wp-content/uploads/carpenter-asbestos-exposure-368x276-c-default.jpg',
+    name: 'Bob the Carpenter',
+    address1: '123 ST',
+    address2: '',
+    city: 'Bobopilis',
+    state: 'CA',
+    zipcode: '90250',
+    is_client: false
   },
   {
-    username: 'jwilloughway1',
-    email: 'rmebes1@sogou.com',
-    password: 'password123'
+    profile_pic: 'https://image.shutterstock.com/image-photo/smiling-handsome-electrician-repairing-electrical-260nw-1192486423.jpg',
+    name: 'Bill the Electrician',
+    address1: '123 ST',
+    address2: '',
+    city: 'Bobopilis',
+    state: 'CA',
+    zipcode: '90250',
+    is_client: false
   },
   {
-    username: 'iboddam2',
-    email: 'cstoneman2@last.fm',
-    password: 'password123'
+    profile_pic: 'https://www.asbestos.com/wp-content/uploads/carpenter-asbestos-exposure-368x276-c-default.jpg',
+    name: 'Jake the Mechanic',
+    address1: '123 ST',
+    address2: '',
+    city: 'Bobopilis',
+    state: 'CA',
+    zipcode: '90250',
+    is_client: false
   },
   {
-    username: 'dstanmer3',
-    email: 'ihellier3@goo.ne.jp',
-    password: 'password123'
+    profile_pic: '',
+    name: 'Michelle the Gardner',
+    address1: '123 ST',
+    address2: '',
+    city: 'Bobopilis',
+    state: 'CA',
+    zipcode: '90250',
+    is_client: false
   },
   {
-    username: 'djiri4',
-    email: 'gmidgley4@weather.com',
-    password: 'password123'
+    profile_pic: '',
+    name: 'Zack the Contractor',
+    address1: '123 ST',
+    address2: '',
+    city: 'Bobopilis',
+    state: 'CA',
+    zipcode: '90250',
+    is_client: false
   },
   {
-    username: 'msprague5',
-    email: 'larnout5@imdb.com',
-    password: 'password123'
+    profile_pic: '',
+    name: 'Todd the Roofer',
+    address1: '123 ST',
+    address2: '',
+    city: 'Bobopilis',
+    state: 'CA',
+    zipcode: '90250',
+    is_client: false
   },
   {
-    username: 'mpergens6',
-    email: 'hnapleton6@feedburner.com',
-    password: 'password123'
+    profile_pic: '',
+    name: 'Scott the Plumber',
+    address1: '123 ST',
+    address2: '',
+    city: 'Bobopilis',
+    state: 'CA',
+    zipcode: '90250',
+    is_client: false
   },
   {
-    username: 'tpenniell7',
-    email: 'kperigo7@china.com.cn',
-    password: 'password123'
-  },
-  {
-    username: 'msabbins8',
-    email: 'lmongain8@google.ru',
-    password: 'password123'
-  },
-  {
-    username: 'jmacarthur9',
-    email: 'bsteen9@epa.gov',
-    password: 'password123'
+    profile_pic: '',
+    name: 'Sam the Pool Cleaner',
+    address1: '123 ST',
+    address2: '',
+    city: 'Bobopilis',
+    state: 'CA',
+    zipcode: '90250',
+    is_client: false
   }
 ];
 

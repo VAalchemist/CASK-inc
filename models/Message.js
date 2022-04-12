@@ -5,31 +5,31 @@ class Message extends Model {}
 
 Message.init(
   {
-    id: {
+    message_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true
     },
-    comment_text: {
+    message_text: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [1]
       }
     },
-    user_id: {
+    handyman_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'user',
         key: 'user_id'
       }
     },
-    employer_id: {
+    client_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'user',
-        key: 'user_id'
+        model: 'client',
+        key: 'client_id'
       }
     }
   },

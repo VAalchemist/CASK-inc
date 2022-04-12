@@ -1,15 +1,23 @@
 .box{
-    
+    float:left;
     margin-right:20px;
 }
+.clear{
+    clear:both;
+}
 
-.img {
+/* .handy-man {
     
-    width:  550px;
+    width:  560px;
     height: 400px;
     display: block;
     margin-left: auto;
-    margin-right: 400px;
+    margin-right: 300px;
     width: 50%;
+    border-radius: 5%;
 
+} */
+
+.profile-pic {
+  background-image: url('../stylesheets/images/nav.jpg');
 }
