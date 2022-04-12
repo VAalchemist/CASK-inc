@@ -1,7 +1,5 @@
 # DUTY CALL app
 
-# Team Profile Generator
-
 ![](https://img.shields.io/badge/Javascript-yellow.svg)
 ![](https://img.shields.io/badge/inquirer-red.svg)
 ![](https://img.shields.io/badge/node.js-green.svg)
