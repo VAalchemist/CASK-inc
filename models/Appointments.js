@@ -14,8 +14,8 @@ Appointments.init(
         client_id: {
             type: DataTypes.INTEGER,
             references: {
-              model: 'user',
-              key: 'user_id'
+              model: 'client',
+              key: 'client_id'
             }            
         },
         handyman_id: {

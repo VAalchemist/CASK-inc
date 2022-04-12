@@ -10,6 +10,7 @@
     />
     <!-- flatpickr -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/material_green.css">
 
     <link rel="stylesheet" href="../style.css" />
     <title>Electrician</title>
@@ -19,24 +20,20 @@
 
     <div>
     
-      <div class="bg-yellow-900">
-        <img class="img" src="../images/electrician.jpg" />
+      <div class="">
+        <img class = " handy-man flex flex-col justify-center items-center m-10 md: w-3/4 border-b-2 border-l-2 border-gray-600 rounded-lg" id="2" src="../images/electrician.jpg" />
       </div>
     
-      <div>
-        <a href="#">Ratings</a>
-      </div>
-    
-      <div>
-          <a href="./booked.html">
-          <button type="submit">book appointment</button></a>
-        </div>
-<form>
-  
-  <input class='form-data' type="datetime-local" placeholder="Select DateTime">
-</form>
+      <form class="date-form text-center 
+      ">
 
-    </div>
+        <input class='date-input form-data bg-gray-700 mt-4 border border-gray-600 rounded-lg py-2 px-4 md:mx-2 "' type="datetime-local" placeholder="Select Date & Time">
+
+        <button type="submit" class="img-form inline-block px-6 py-2.5 bg-orange-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-700 hover:shadow-lg focus:bg-green-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-800 active:shadow-lg transition duration-150 ease-in-out">Book Appointment</button></a>
+      </form>
+    
+      </div>
+      <script src="../../javascript/add-appointment.js"></script>
     <!-- flatpickr -->
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script>
